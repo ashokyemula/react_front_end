@@ -12,7 +12,7 @@ class SideBarChat extends React.Component {
   }; 
 
   const roomName = prompt("Please Enter Chat Room Name");
-  
+
             render () {
 
               
@@ -40,7 +40,7 @@ class SideBarChat extends React.Component {
                            </div>
                         </div>
                        )
-                
+                // this is test for github
 
 
 
