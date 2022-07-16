@@ -16,29 +16,31 @@ function SideBarChat({addNewChat}) {
 
   const createChat = () => {
     const roomName = prompt("Please Enter Chat Room Name");
-    const onSubmit = rname => { 
-      axios.post('http://localhost:5000/createRoom', rname)
-      .then((res) => {
-          if (res.status == 200) {
-            alert("room created")
-          } else {
-                Promise.reject()
-          }
-      })
-    }
+    // const onSubmit = rname => { 
+    //   axios.post('http://localhost:5000/createRoom', rname)
+    //   .then((res) => {
+    //       if (res.status == 200) {
+    //         alert("room created")
+    //       } else {
+    //             Promise.reject()
+    //       }
+    //   })
+    
 
     
     if (roomName) {
       //do some database stuff here
       // fetch('http://localhost:5000/createRoom', {
-        method: POST,
-        headers: {
-          'content-type': 'application/json'
-        },
-          body: {roomName:roomName}
-        
-
-      }).then(()=>console.log('createChat api called'))
+        console.log(`The room name is: ${roomName}` );
+        axios({
+          method: 'post',
+          url: 'http://localhost:5000/createRoom',
+          data: {
+            roomName: 'RommFromReactFE'
+            
+          }
+        });
+     
     }
   };
 
